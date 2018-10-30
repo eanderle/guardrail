@@ -21,6 +21,11 @@ val circeVersion      = "0.9.3"
 val http4sVersion     = "0.18.12"
 val scalatestVersion  = "3.0.5"
 
+// java-gen deps
+val javaparserVersion = "3.7.0"
+val vavrVersion       = "0.9.2"
+val junitVersion      = "5.3.1"
+
 mainClass in assembly := Some("com.twilio.guardrail.CLI")
 
 lazy val runExample: TaskKey[Unit] = taskKey[Unit]("Run with example args")
@@ -115,7 +120,11 @@ val codegenSettings = Seq(
     "org.typelevel" %% "cats-core"     % catsVersion,
     "org.typelevel" %% "cats-kernel"   % catsVersion,
     "org.typelevel" %% "cats-macros"   % catsVersion,
-    "org.typelevel" %% "cats-free"     % catsVersion
+    "org.typelevel" %% "cats-free"     % catsVersion,
+    // java-generator deps
+    "com.github.javaparser" % "javaparser-symbol-solver-core" % javaparserVersion,
+    "io.vavr"               % "vavr"                          % vavrVersion,
+    "org.junit.jupiter"     % "junit-jupiter-api"             % junitVersion % Test
   )
   // Dev
   ,
