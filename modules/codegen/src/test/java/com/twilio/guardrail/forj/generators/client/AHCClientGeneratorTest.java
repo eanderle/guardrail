@@ -16,8 +16,8 @@ public class AHCClientGeneratorTest {
             Context.empty(),
             List.empty(),
             List.empty(),
-            Option.none(),
-            Option.none(),
+            Option.of("http://localhost:8080"),
+            Option.of("v1/myService"),
             List.empty());
     }
 
